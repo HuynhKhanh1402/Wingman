@@ -306,6 +306,11 @@ ol {
 	height: 865px;
 	display: table;
 	width: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero-slider .hs-item::before {
+	
 }
 
 .hero-slider .hs-text {
