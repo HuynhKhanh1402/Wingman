@@ -578,6 +578,7 @@ ol {
 	border: 1px solid #d6dee7;
 	border-top: none;
 	position: relative;
+	min-height: 230px;
 }
 
 .recent-game-item .rgi-content h5 {
@@ -774,7 +775,7 @@ ol {
 .footer-top-bg {
 	position: absolute;
 	left: -30px;
-	bottom: -85px;
+	bottom: -20px;
 	z-index: 2;
 }
 
@@ -786,6 +787,7 @@ ol {
 	padding: 40px 30px 7px;
 	background: #252525;
 	border: 1px solid #4a4a4a;
+	min-height: 500px;
 }
 
 .footer-widget .fw-title {
