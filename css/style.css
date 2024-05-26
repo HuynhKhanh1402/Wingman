@@ -909,6 +909,7 @@ ol {
 .page-info-section {
 	height: 499px;
 	position: relative;
+	filter: grayscale(10%);
 }
 
 .page-info-section .pi-content {
