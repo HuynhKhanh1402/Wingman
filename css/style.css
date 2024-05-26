@@ -58,6 +58,10 @@ textarea:focus {
 	outline: none;
 }
 
+a {
+	text-decoration: none;
+}
+
 a:hover,
 a:focus {
 	text-decoration: none;
@@ -266,6 +270,10 @@ ol {
 .main-menu {
 	float: right;
 	margin-right: 170px;
+}
+
+a.m-current {
+	color: #ffb320;
 }
 
 .main-menu ul {
