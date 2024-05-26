@@ -58,6 +58,10 @@ textarea:focus {
 	outline: none;
 }
 
+a {
+	text-decoration: none;
+}
+
 a:hover,
 a:focus {
 	text-decoration: none;
@@ -258,6 +262,47 @@ ol {
 	border-radius: 30px;
 }
 
+/*------------------
+  Login / Panel Section
+---------------------*/
+.modal-content {
+	background-color: rgba(255, 255, 255, 1);
+}
+
+.modal-title {
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #FFB320;
+}
+
+.btn-login,
+.btn-register {
+	background-color: #FFB320;
+}
+
+.social-login {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.social-login span {
+	margin: 0 0 10px 0;
+}
+
+.btn-social {
+	width: 30px;
+}
+
+.btn-social {
+	margin: 0 4px;
+}
+
+.btn-modal-close {
+	background-color: #000;
+}
+
 .user-panel a {
 	font-size: 14px;
 	color: #131313;
@@ -267,6 +312,8 @@ ol {
 	float: right;
 	margin-right: 170px;
 }
+
+
 
 .main-menu ul {
 	list-style: none;
@@ -287,6 +334,10 @@ ol {
 
 .main-menu ul li a:hover {
 	color: #ffb320;
+}
+
+.m-current {
+	color: #ffb320!important;
 }
 
 .header-btn {

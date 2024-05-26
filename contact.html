@@ -40,7 +40,82 @@
 				<img src="img/logo.png" alt="" width="128px">
 			</a>
 			<div class="user-panel">
-				<a href="#">Login</a>  /  <a href="#">Register</a>
+				<a href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a> / 
+				<a href="#" data-bs-toggle="modal" data-bs-target="#registerModal">Register</a>
+				<!-- Login Modal -->
+				<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="loginModalLabel">Login</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+								<form>
+									<div class="mb-3">
+										<label for="login-email" class="col-form-label">Email:</label>
+										<input type="email" class="form-control" id="login-email" placeholder="abc@domain.com">
+									</div>
+									<div class="mb-3">
+										<label for="login-password" class="col-form-label">Password:</label>
+										<input type="password" class="form-control" id="login-password" placeholder="********">
+									</div>
+								</form>
+								<div class="social-login">
+									<span class="text-center">Or login with</span>
+									<div class="wrapped-social-login">
+										<a href="#">
+											<img class="btn-social" src="./img/login-logo/google.png" alt="">
+										</a>
+										<a href="#">
+											<img class="btn-social" src="./img/login-logo/facebook-logo.png" alt="">
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary btn-modal-close" data-bs-dismiss="modal">Close</button>
+								<button type="button" class="btn btn-primary btn-login">Login</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Register Modal -->
+				<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="registerModalLabel">Register</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+								<form>
+									<div class="mb-3">
+										<label for="register-username" class="col-form-label">Username:</label>
+										<input type="text" class="form-control" id="register-username" placeholder="decaovosu">
+									</div>
+									<div class="mb-3">
+										<label for="register-email" class="col-form-label">Email:</label>
+										<input type="email" class="form-control" id="register-email" placeholder="abc@domain.com">
+									</div>
+									<div class="mb-3">
+										<label for="register-password" class="col-form-label">Password:</label>
+										<input type="password" class="form-control" id="register-password" placeholder="********">
+									</div>
+									<div class="mb-3">
+										<label for="register-re-password" class="col-form-label">Rewrite password:</label>
+										<input type="password" class="form-control" id="register-re-password" placeholder="********">
+									</div>
+								</form>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary btn-modal-close" data-bs-dismiss="modal">Close</button>
+								<button type="button" class="btn btn-primary btn-register">Register</button>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 			<!-- responsive -->
 			<div class="nav-switch">
@@ -53,7 +128,7 @@
 					<li><a href="review.html">Games</a></li>
 					<li><a href="categories.html">Blog</a></li>
 					<li><a href="community.html">Forums</a></li>
-					<li><a href="contact.html">Contact</a></li>
+					<li><a class="m-current" href="contact.html">Contact</a></li>
 				</ul>
 			</nav>
 		</div>
@@ -94,7 +169,7 @@
 	<section class="page-section spad contact-page">
 		<div class="container">
 			<div class="map" id="map-canvas">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3835.7518596699574!2d108.2502536251339!3d15.974329684691538!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314219b7501de701%3A0xd8f61319afabaab2!2zVHLGsOG7nW5nIMSR4bqhaSBo4buNYyBDTlRULVRUIFZp4buHdCAtIEjDoG4!5e0!3m2!1svi!2s!4v1716698755100!5m2!1svi!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3835.7518596699574!2d108.2502536251339!3d15.974329684691538!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314219b7501de701%3A0xd8f61319afabaab2!2zVHLGsOG7nW5nIMSR4bqhaSBo4buNYyBDTlRULVRUIFZp4buHdCAtIEjDoG4!5e0!3m2!1svi!2s!4v1716698755100!5m2!1svi!2s" width="100%" height="100%" style="border: 2px solid #FFB320; border-bottom: 3px solid #FFB320;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 			</div>
 			<div class="row">
 				<div class="col-lg-4 mb-5 mb-lg-0">

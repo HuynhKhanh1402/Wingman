@@ -40,7 +40,82 @@
 				<img src="img/logo.png" alt="" width="128px">
 			</a>
 			<div class="user-panel">
-				<a href="#">Login</a>  /  <a href="#">Register</a>
+				<a href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a> / 
+				<a href="#" data-bs-toggle="modal" data-bs-target="#registerModal">Register</a>
+				<!-- Login Modal -->
+				<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="loginModalLabel">Login</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+								<form>
+									<div class="mb-3">
+										<label for="login-email" class="col-form-label">Email:</label>
+										<input type="email" class="form-control" id="login-email" placeholder="abc@domain.com">
+									</div>
+									<div class="mb-3">
+										<label for="login-password" class="col-form-label">Password:</label>
+										<input type="password" class="form-control" id="login-password" placeholder="********">
+									</div>
+								</form>
+								<div class="social-login">
+									<span class="text-center">Or login with</span>
+									<div class="wrapped-social-login">
+										<a href="#">
+											<img class="btn-social" src="./img/login-logo/google.png" alt="">
+										</a>
+										<a href="#">
+											<img class="btn-social" src="./img/login-logo/facebook-logo.png" alt="">
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary btn-modal-close" data-bs-dismiss="modal">Close</button>
+								<button type="button" class="btn btn-primary btn-login">Login</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Register Modal -->
+				<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="registerModalLabel">Register</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+								<form>
+									<div class="mb-3">
+										<label for="register-username" class="col-form-label">Username:</label>
+										<input type="text" class="form-control" id="register-username" placeholder="decaovosu">
+									</div>
+									<div class="mb-3">
+										<label for="register-email" class="col-form-label">Email:</label>
+										<input type="email" class="form-control" id="register-email" placeholder="abc@domain.com">
+									</div>
+									<div class="mb-3">
+										<label for="register-password" class="col-form-label">Password:</label>
+										<input type="password" class="form-control" id="register-password" placeholder="********">
+									</div>
+									<div class="mb-3">
+										<label for="register-re-password" class="col-form-label">Rewrite password:</label>
+										<input type="password" class="form-control" id="register-re-password" placeholder="********">
+									</div>
+								</form>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary btn-modal-close" data-bs-dismiss="modal">Close</button>
+								<button type="button" class="btn btn-primary btn-register">Register</button>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 			<!-- responsive -->
 			<div class="nav-switch">
@@ -49,7 +124,7 @@
 			<!-- site menu -->
 			<nav class="main-menu">
 				<ul>
-					<li><a href="index.html">Home</a></li>
+					<li><a class="m-current" href="index.html">Home</a></li>
 					<li><a href="review.html">Games</a></li>
 					<li><a href="categories.html">Blog</a></li>
 					<li><a href="community.html">Forums</a></li>
@@ -224,14 +299,14 @@
 						<div class="ti-content">
 							<div class="ti-thumb set-bg" data-setbg="img/tournament/1.jpg"></div>
 							<div class="ti-text">
-								<h4>World Of WarCraft</h4>
+								<h4>Masters Shanghai 2024</h4>
 								<ul>
-									<li><span>Tournament Beggins:</span> June 20, 2018</li>
-									<li><span>Tounament Ends:</span> July 01, 2018</li>
-									<li><span>Participants:</span> 10 teams</li>
-									<li><span>Tournament Author:</span> Admin</li>
+									<li><span>Tournament Beggins:</span> May 23, 2024</li>
+									<li><span>Tounament Ends:</span> June 09, 2024</li>
+									<li><span>Participants:</span> 12 teams</li>
+									<li><span>Tournament Author:</span> Riot Games</li>
 								</ul>
-								<p><span>Prizes:</span> 1st place $2000, 2nd place: $1000, 3rd place: $500</p>
+								<p><span>Prizes:</span> $1,000,000 USD</p>
 							</div>
 						</div>
 					</div>
@@ -240,16 +315,16 @@
 					<div class="tournament-item">
 						<div class="ti-notic">Premium Tournament</div>
 						<div class="ti-content">
-							<div class="ti-thumb set-bg" data-setbg="img/tournament/2.jpg"></div>
+							<div class="ti-thumb set-bg" data-setbg="img/tournament/2.png"></div>
 							<div class="ti-text">
-								<h4>DOOM</h4>
+								<h4>PUBG Global Series 3 2024</h4>
 								<ul>
-									<li><span>Tournament Beggins:</span> June 20, 2018</li>
-									<li><span>Tounament Ends:</span> July 01, 2018</li>
-									<li><span>Participants:</span> 10 teams</li>
-									<li><span>Tournament Author:</span> Admin</li>
+									<li><span>Tournament Beggins:</span> May 20, 2024</li>
+									<li><span>Tounament Ends:</span> May 26, 2024</li>
+									<li><span>Participants:</span> 24 teams</li>
+									<li><span>Tournament Author:</span> PUBG Corporation</li>
 								</ul>
-								<p><span>Prizes:</span> 1st place $2000, 2nd place: $1000, 3rd place: $500</p>
+								<p><span>Prizes:</span> $300,000 USD</p>
 							</div>
 						</div>
 					</div>
