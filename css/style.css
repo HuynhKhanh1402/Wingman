@@ -262,6 +262,47 @@ ol {
 	border-radius: 30px;
 }
 
+/*------------------
+  Login / Panel Section
+---------------------*/
+.modal-content {
+	background-color: rgba(255, 255, 255, 1);
+}
+
+.modal-title {
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #FFB320;
+}
+
+.btn-login,
+.btn-register {
+	background-color: #FFB320;
+}
+
+.social-login {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.social-login span {
+	margin: 0 0 10px 0;
+}
+
+.btn-social {
+	width: 30px;
+}
+
+.btn-social {
+	margin: 0 4px;
+}
+
+.btn-modal-close {
+	background-color: #000;
+}
+
 .user-panel a {
 	font-size: 14px;
 	color: #131313;
