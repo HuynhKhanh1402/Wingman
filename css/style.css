@@ -1297,6 +1297,136 @@ ol {
 	margin-right: 20px;
 }
 
+/*-----------------
+  Popup chat section
+--------------------*/
+.chat-wrapper {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	z-index: 10;
+}
+
+.chat-btn {
+	cursor: pointer;
+	width: 50px;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50px;
+	background-color: #FFB320;
+	color: #fff;
+	font-size: 22px;
+	border: none;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	z-index: 10;
+}
+
+.chat-btn .close {
+	display: none;
+}
+
+.chat-btn i {
+	transition: all 0.9s ease;
+}
+
+#check:checked~.chat-btn i {
+	display: block;
+	pointer-events: auto;
+	transform: rotate(180deg);
+}
+
+#check:checked~.chat-btn .comment {
+	display: none;
+}
+
+.chat-form-wrapper {
+	position: fixed;
+	bottom: 80px;
+	right: 20px;
+	width: 300px;
+	background-color: #fff;
+	border-radius: 5px;
+	opacity: 0;
+	transition: all 0.4s;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	z-index: 10;
+}
+
+#check:checked~.chat-form-wrapper {
+	opacity: 1;
+}
+
+.header-chat {
+	padding: 13px;
+	background-color: #FFB320;
+	border-radius: 5px 5px 0 0;
+	margin-bottom: 10px;
+	color: #fff;
+}
+
+.chat-form {
+	padding: 15px;
+}
+
+.chat-form input,
+textarea,
+button {
+	margin-bottom: 10px;
+}
+
+.chat-form textarea {
+	resize: none;
+}
+
+.form-control:focus,
+.btn:focus {
+	box-shadow: none;
+}
+
+.btn,
+.btn:focus,
+.btn:hover {
+	background-color: #FFB320;
+	border: blue;
+}
+
+#check {
+	display: none !important;
+}
+
+/* Scrolling to top section */
+.scrolling-to-top {
+	position: fixed;
+    bottom: 80px;
+    right: 20px;
+    z-index: 11;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	border: 3px solid #FFB320;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.scrolling-to-top.visible {
+    opacity: 1;
+}
+
+.scrolling-to-top:hover {
+	cursor: pointer !important;
+}
+
+.btn-scroll-to-top {
+	color: #FFB320;
+}
+
 /*------------------
   Responsive
 ---------------------*/

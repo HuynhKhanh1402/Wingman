@@ -68,5 +68,36 @@ $(window).on('load', function() {
 	    duplicated: true
 	});
 
+	/*------------------
+		Scrolling to top
+	--------------------*/
+	const scrollTopBtn = $('.scrolling-to-top');
+	$(window).on('scroll', function(e){
+		var position = $(window).scrollTop();
+        if (position > 1000) {
+			scrollTopBtn.addClass('visible');
+		} else {
+			scrollTopBtn.removeClass('visible');
+		}
+	});
+
+	$('#check').change(function() {
+		if (this.checked) {
+			$('.chat-form-wrapper').css('z-index', 11);
+			$('.scrolling-to-top').css('z-index', 9);
+		} else {
+			$('.chat-form-wrapper').css('z-index', 10);
+			$('.scrolling-to-top').css('z-index', 11);
+		}
+	});
+
+	scrollTopBtn.on('click', function(e) {
+		e.preventDefault();
+		$('html, body').animate({scrollTop: 0}, 'slow');
+	});
 })(jQuery);
+
+
+
+
 
