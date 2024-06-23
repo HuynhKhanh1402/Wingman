@@ -491,7 +491,7 @@ ol {
 }
 
 .news-ticker-contant .nt-item span {
-	margin-right: 35px;
+	margin-right: 10px;
 	display: inline-block;
 	text-transform: uppercase;
 	font-size: 12px;
@@ -1521,6 +1521,10 @@ button {
 	}
 	.footer-top-bg {
 		display: none;
+	}
+
+	.tournaments-section .tournament-item {
+		min-height: 571px;
 	}
 }
 
