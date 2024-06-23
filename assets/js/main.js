@@ -240,8 +240,12 @@ $(window).on('load', function() {
         })
         .then(res => res.text())
         .then(responseText => {
+			// hide loading spiner
+			let spiner = document.querySelector(".submit-message-loading")
+			spiner.style.display = 'none'
+			
             alert('Your message has been sent successfully!');
-            form.reset();
+			form.reset();
         })
         .catch(error => {
             alert('There was an error sending your message. Please try again later.');
