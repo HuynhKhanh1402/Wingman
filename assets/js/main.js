@@ -222,7 +222,34 @@ $(window).on('load', function() {
 			logout();
 		});
 	});
-	
+
+	/*------------------
+		Leave message
+		URL GOOGLE SHEET:
+		https://docs.google.com/spreadsheets/d/1d89RUtjMSjD82OIWzSGg70Cb9ztShCAAwLwDo-YP4Bo/edit#gid=0
+	--------------------*/
+	function leaveMessage(e) {
+        e.preventDefault(); 
+
+        const form = e.target;
+        const formData = new FormData(form);
+
+        fetch(form.action, {
+            method: 'POST',
+            body: formData,
+        })
+        .then(res => res.text())
+        .then(responseText => {
+            alert('Your message has been sent successfully!');
+            form.reset();
+        })
+        .catch(error => {
+            alert('There was an error sending your message. Please try again later.');
+        });
+    };
+
+	$('#contactForm').on('submit', leaveMessage);
+	$('#contactForm2').on('submit', leaveMessage);
 })(jQuery);
 
 
