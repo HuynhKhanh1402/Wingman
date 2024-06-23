@@ -95,6 +95,134 @@ $(window).on('load', function() {
 		e.preventDefault();
 		$('html, body').animate({scrollTop: 0}, 'slow');
 	});
+
+	/*------------------
+		Register / Login
+	--------------------*/
+	function register() {
+		const username = $('#register-username').val();
+		const email = $('#register-email').val();
+		const password = $('#register-password').val();
+		const confirmPassword = $('#register-re-password').val(); 
+	  
+		if (username === '' || email === '' || password === '' || confirmPassword === '') {
+			alert('Register Failed! All fields are required.');
+			return;
+		}
+		
+		if (password !== confirmPassword) {
+			alert('Register Failed! Passwords do not match.');
+			return;
+		}
+	
+		// Check if email already exists
+		if (localStorage.getItem(email)) {
+			alert('Register Failed! Email already exists.');
+			return;
+		}
+	
+		// Optional: Check if username is unique (if needed)
+		for (let i = 0; i < localStorage.length; i++) {
+			const key = localStorage.key(i);
+			const user = JSON.parse(localStorage.getItem(key));
+			if (user.username === username) {
+				alert('Register Failed! Username already exists.');
+				return;
+			}
+		}
+	
+		const user = {
+			username: username,
+			email: email,
+			password: password
+		};
+	  
+		localStorage.setItem(email, JSON.stringify(user));
+		alert('Register Successfully!');
+		$('#registerModal').modal('hide');
+		$('#loginModal').modal('show');
+	}
+	
+	
+
+	function login() {
+		const email = $('#login-email').val();
+		const password = $('#login-password').val();
+		
+		if (email === '' || password === '') {
+			alert('Login Failed! All fields are required.');
+			return;
+		}
+		
+		const user = JSON.parse(localStorage.getItem(email));
+		
+		if (user && user.password === password) {
+			alert('Login Successfully!');
+			$('#loginModal').modal('hide');
+
+			localStorage.setItem('loggedInUser', JSON.stringify(user));
+
+			// Thay đổi nội dung của liên kết "Login"
+            $('#login-link').text(user.username);
+            $('#login-link').removeAttr('data-bs-toggle'); // Xóa thuộc tính data-bs-toggle để không mở modal nữa
+            $('#login-link').removeAttr('data-bs-target'); // Xóa thuộc tính data-bs-target để không mở modal nữa
+            
+            // Ẩn liên kết "Register"
+            $('#register-link').hide();
+
+			$('#logout-link').show().text('Logout');
+			location.reload();
+		} else {
+			alert('Login Failed! Incorrect email or password.');
+		}
+
+	}
+
+	function logout() {
+        localStorage.removeItem('loggedInUser');
+        alert('Logout Successfully!');
+        // Hiển thị lại liên kết "Login" và "Register", ẩn nút "Logout"
+        $('#login-link').show();
+        $('#register-link').show();
+        $('#logout-link').hide();
+
+		location.reload();
+    }
+
+	$(document).ready(function() {
+		// Kiểm tra nếu đã có thông tin đăng nhập trong localStorage
+		const loggedInUser = localStorage.getItem('loggedInUser');
+		
+		if (loggedInUser) {
+			const user = JSON.parse(loggedInUser);
+			// Thay đổi giao diện để hiển thị "Welcome, username"
+			$('#login-link').text(user.username);
+			$('#login-link').removeAttr('data-bs-toggle'); // Xóa thuộc tính data-bs-toggle để không mở modal nữa
+			$('#login-link').removeAttr('data-bs-target'); // Xóa thuộc tính data-bs-target để không mở modal nữa
+
+			// Ẩn liên kết "Register"
+			$('#register-link').hide();
+			$('.user-panel').css('padding', '0 28px');
+			$('#logout-link').show().text('Logout');
+		}
+
+		$('.btn-register').on('click', function(e) {
+			e.preventDefault();
+			register();
+		});
+	
+		// Hàm đăng nhập
+		$('.btn-login').on('click', function(e) {
+			e.preventDefault();
+			login();
+		});
+
+		$('#logout-link').on('click', function(e) {
+			e.preventDefault();
+			logout();
+		});
+	});
+	
 })(jQuery);
 
 

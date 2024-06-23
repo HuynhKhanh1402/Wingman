@@ -308,11 +308,26 @@ ol {
 	color: #131313;
 }
 
+#logout-link {
+	background-color: rgb(0, 0, 0);
+	border-radius: 50px;
+	border: none;
+	color: red;
+	font-weight: bold;
+    margin-top: 10px; 
+	font-size: 12px;
+}
+
+
+
+/*------------------
+  	Main menu
+---------------------*/
+
 .main-menu {
 	float: right;
 	margin-right: 170px;
 }
-
 
 
 .main-menu ul {
@@ -1483,7 +1498,7 @@ button {
 		margin-left: 15px;
 	}
 	.user-panel {
-		padding: 8px 15px;
+		padding: 8px 20px;
 	}
 	.hero-slider .hs-text h2 {
 		font-size: 50px;
