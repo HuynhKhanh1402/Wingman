@@ -164,8 +164,8 @@ $(window).on('load', function() {
 
 			// Thay đổi nội dung của liên kết "Login"
             $('#login-link').text(user.username);
-            $('#login-link').removeAttr('data-bs-toggle'); // Xóa thuộc tính data-bs-toggle để không mở modal nữa
-            $('#login-link').removeAttr('data-bs-target'); // Xóa thuộc tính data-bs-target để không mở modal nữa
+            $('#login-link').removeAttr('data-bs-toggle'); 
+            $('#login-link').removeAttr('data-bs-target'); 
             
             // Ẩn liên kết "Register"
             $('#register-link').hide();
@@ -195,12 +195,11 @@ $(window).on('load', function() {
 		
 		if (loggedInUser) {
 			const user = JSON.parse(loggedInUser);
-			// Thay đổi giao diện để hiển thị "Welcome, username"
 			$('#login-link').text(user.username);
-			$('#login-link').removeAttr('data-bs-toggle'); // Xóa thuộc tính data-bs-toggle để không mở modal nữa
-			$('#login-link').removeAttr('data-bs-target'); // Xóa thuộc tính data-bs-target để không mở modal nữa
+			$('#login-link').removeAttr('data-bs-toggle'); 
+			$('#login-link').removeAttr('data-bs-target'); 
 
-			// Ẩn liên kết "Register"
+			
 			$('#register-link').hide();
 			$('.user-panel').css('padding', '0 28px');
 			$('#logout-link').show().text('Logout');
@@ -211,7 +210,6 @@ $(window).on('load', function() {
 			register();
 		});
 	
-		// Hàm đăng nhập
 		$('.btn-login').on('click', function(e) {
 			e.preventDefault();
 			login();
@@ -228,6 +226,19 @@ $(window).on('load', function() {
 		URL GOOGLE SHEET:
 		https://docs.google.com/spreadsheets/d/1d89RUtjMSjD82OIWzSGg70Cb9ztShCAAwLwDo-YP4Bo/edit#gid=0
 	--------------------*/
+	let msgBtn = document.querySelector(".submit-message-btn")
+	msgBtn.addEventListener('click', function() {
+		const name = $('input[name="name"]').val();
+		const email = $('input[name="email"]').val();
+		const subject = $('input[name="subject"]').val();
+		const message = $('textarea[name="message"]').val();
+
+		if (name !== '' || email !== '' || subject !== '' || message !== '') {
+            let spiner = document.querySelector(".submit-message-loading");
+			spiner.style.display = 'inline-block';
+        }	
+	});
+
 	function leaveMessage(e) {
         e.preventDefault(); 
 
@@ -241,8 +252,8 @@ $(window).on('load', function() {
         .then(res => res.text())
         .then(responseText => {
 			// hide loading spiner
-			let spiner = document.querySelector(".submit-message-loading")
-			spiner.style.display = 'none'
+			let spiner = document.querySelector(".submit-message-loading");
+			spiner.style.display = 'none';
 			
             alert('Your message has been sent successfully!');
 			form.reset();

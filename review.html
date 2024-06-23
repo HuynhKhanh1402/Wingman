@@ -472,7 +472,10 @@
 					<input type="email" name="email" class="form-control" placeholder="Email" required>
 					<input type="text" name="subject" class="form-control" placeholder="Subject" required>
 					<textarea name="message" class="form-control" placeholder="Your Text Message" required></textarea>
-					<button type="submit" class="btn btn-success btn-block">Submit</button>
+					<div class="d-flex align-items-center">
+						<button type="submit" class="submit-message-btn btn btn-success btn-block mb-0">Submit</button>
+						<div class="submit-message-loading spinner-border text-warning ms-2" role="status" style="display: none;"></div>
+					</div>
 				</form>
 			</div> 
 		</div>

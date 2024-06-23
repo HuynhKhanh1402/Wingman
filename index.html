@@ -523,17 +523,7 @@
 					<textarea name="message" class="form-control" placeholder="Your Text Message" required></textarea>
 					<div class="d-flex align-items-center">
 						<button type="submit" class="submit-message-btn btn btn-success btn-block mb-0">Submit</button>
-						<div class="submit-message-loading spinner-border text-warning ms-2" role="status" style="display: none;">
-							<span class="sr-only">Loading...</span>
-					  	</div>
-
-						<script>
-							let btn = document.querySelector(".submit-message-btn")
-							btn.addEventListener('click', function() {
-								let spiner = document.querySelector(".submit-message-loading")
-								spiner.style.display = 'inline-block'
-							})
-						</script>
+						<div class="submit-message-loading spinner-border text-warning ms-2" role="status" style="display: none;"></div>
 					</div>
 				</form>
 			</div>
